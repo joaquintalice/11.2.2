@@ -1,45 +1,39 @@
-document.addEventListener('DOMContentLoaded', main);
-
 const form = document.getElementById('form-with-post');
-// console.log(form)
 
-function main() {
-    getUsers()
-}
+form.addEventListener('submit', handleSubmit);
 
-const formData = form.addEventListener('submit', () => {
-    console.log(formData)
-})
+async function handleSubmit(e) {
+    e.preventDefault()
+    const firstName = document.getElementById('nombre');
+    const lastName = document.getElementById('apellido');
+    const date = document.getElementById('fecha-nacimiento');
 
-console.log(formData)
+    const user = {
+        firstName: firstName.value,
+        lastName: lastName.value,
+        date: date.value
+    }
 
-const URL = 'https://jsonplaceholder.typicode.com/users';
-const params = {
-    method: 'POST',
-    body: formData
-}
+    const URL = 'https://jsonplaceholder.typicode.com/users';
+    const params = {
+        method: 'POST',
+        body: JSON.stringify(user)
+    }
 
-console.log(params.body)
+    const response = await fetch(URL, params);
 
-async function getUsers() {
-
-    const response = await fetch(URL)
-
-    // console.log(response)
+    if (!response.ok) throw new Error(`Status code: ${response.status}`);
 
     const data = await response.json();
 
-    // console.log(data)
+    const newUser = {
+        ...data,
+        ...user
+    }
 
-    return data
+    console.log(newUser)
+    console.log('Data cargada al servidor exitosamente')
 }
 
-async function insertUser(dataToInsert) {
-
-    const response = await fetch(URL, params);
-    console.log(response)
-    const data = await response.json()
-    console.log(data)
 
 
-}
