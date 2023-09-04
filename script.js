@@ -6,12 +6,12 @@ async function handleSubmit(e) {
     e.preventDefault()
     const firstName = document.getElementById('nombre');
     const lastName = document.getElementById('apellido');
-    const date = document.getElementById('fecha-nacimiento');
+    const bornDate = document.getElementById('fecha-nacimiento');
 
     const user = {
         firstName: firstName.value,
         lastName: lastName.value,
-        date: date.value
+        bornDate: bornDate.value
     }
 
     const URL = 'https://jsonplaceholder.typicode.com/users';
