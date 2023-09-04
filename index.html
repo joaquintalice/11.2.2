@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <!-- Para este Code Challenge te desafíamos a:
+
+    1) Investigar cómo realizar una solicitud HTTP utilizando la función fetch(), tal como venimos haciendo en el proyecto, pero esta vez usando  el método POST.
+    
+    2) Realiza una página web en donde deberás crear un formulario de registro con los campos "Nombre", "Apellido" y "Fecha de Nacimiento".
+    
+    3) Implementa el código JS para que la información del formulario pueda enviarse en formato JSON al siguiente endpoint => https://jsonplaceholder.typicode.com/users.
+    
+    4) Si el código está correcto, el servidor responderá al fetch con la información que le has enviado. Saca captura de pantalla que prueba que estás recibiendo la respuesta del servidor.
+    
+    5) Publica en el foro de entrega de la actividad la captura de pantalla y el link del proyecto. -->
+
+    <div class="container">
+
+
+        <form id="form-with-post" method="post">
+
+            <div class="form-group my-2">
+                <label for="nombre">Nombre</label>
+                <input type="text" class="form-control" id="nombre" autocomplete="off" placeholder="Ingrese su nombre">
+            </div>
+
+            <div class="form-group my-2">
+                <label for="apellido">Apellido</label>
+                <input type="text" class="form-control" id="apellido" autocomplete="off"
+                    placeholder="Ingrese su apellido">
+            </div>
+
+            <div class="form-group my-2">
+                <label for="fecha-nacimiento">Fecha de Nacimiento</label>
+                <input type="date" class="form-control" autocomplete="off" id="fecha-nacimiento"
+                    placeholder="Ingrese su Fecha de Nacimiento">
+            </div>
+
+            <button type="submit" class="btn btn-primary my-3">Submit</button>
+        </form>
+
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
